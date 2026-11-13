@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practica cómo reconocer un correo de phishing en un entorno universitario.">
+  <title>Phishing Arena — Muestra inicial</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Phishing Arena, página de inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="9" width="26" height="19" rx="4"/><path d="m4 11 12 9 12-9M21 3v6"/></svg>
+      <span>Phishing Arena</span>
+    </a>
+    <span class="prototype-label">BETA · MUESTRA INICIAL</span>
+  </header>
+
+  <main class="page">
+    <section id="home" class="panel home-panel" aria-labelledby="home-title">
+      <p class="eyebrow">APRENDE A RECONOCER EL PHISHING</p>
+      <h1 id="home-title" tabindex="-1">Phishing Arena</h1>
+      <p class="intro">Estás revisando tus correos de la universidad. ¿Puedes reconocer un mensaje falso antes de caer en el anzuelo?</p>
+
+      <svg class="fishing-art" viewBox="0 0 520 290" role="img" aria-labelledby="art-title art-description">
+        <title id="art-title">Una caña de pescar con un correo colgando del anzuelo</title>
+        <desc id="art-description">El correo representa el engaño que debes aprender a reconocer.</desc>
+        <ellipse cx="267" cy="262" rx="175" ry="12" fill="#edf2f6"/>
+        <circle cx="279" cy="135" r="113" fill="#f3f6f9"/>
+        <path d="M110 251 204 47q7-14 22-11l139 21" fill="none" stroke="#304b66" stroke-width="8" stroke-linecap="round"/>
+        <path d="m111 251 20-44" stroke="#66829b" stroke-width="17" stroke-linecap="round"/>
+        <circle cx="150" cy="193" r="15" fill="#fff" stroke="#304b66" stroke-width="5"/>
+        <circle cx="150" cy="193" r="5" fill="#66829b"/>
+        <path d="M366 58v69" fill="none" stroke="#ca9450" stroke-width="2.5"/>
+        <path d="M366 126v19c0 18-25 18-25 0v-7l7 9" fill="none" stroke="#304b66" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="rotate(8 350 190)">
+          <rect x="286" y="155" width="129" height="85" rx="11" fill="#fff" stroke="#9eb0c1" stroke-width="2"/>
+          <path d="m289 161 61 43 62-43M290 234l40-34m81 34-40-34" fill="none" stroke="#9eb0c1" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="407" cy="158" r="16" fill="#f5e3c7" stroke="#fff" stroke-width="4"/>
+          <path d="M407 150v9m0 5v1" stroke="#8b602b" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <path d="m253 72 4 7m-12 4 8 2M435 213l7 3m-11 6 3 6" stroke="#b8c6d2" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+
+      <p class="home-instructions">Lee el correo y elige la señal que lo delata.<br>Tienes <strong>30 segundos</strong> para responder.</p>
+      <button id="start-button" class="button primary start-button" type="button">Inicio <span aria-hidden="true">→</span></button>
+      <p class="sample-note">Esta muestra permite probar el primer nivel.</p>
+    </section>
+
+    <section id="countdown" class="panel countdown-panel" aria-labelledby="countdown-title" hidden>
+      <p class="eyebrow">PREPARA TU OJO CRÍTICO</p>
+      <h1 id="countdown-title" tabindex="-1">Revisa tu correo</h1>
+      <p>El tiempo comienza al aparecer el mensaje.</p>
+      <div id="countdown-number" class="countdown-number" aria-live="assertive" aria-atomic="true">1</div>
+    </section>
+
+    <section id="game" class="panel game-panel" aria-labelledby="game-title" hidden>
+      <div class="game-toolbar">
+        <span class="badge level-badge">NIVEL 1</span>
+        <span class="sample-badge">Muestra inicial</span>
+        <span id="timer" class="badge timer" role="timer" aria-label="Tiempo restante: 30 segundos">00:30</span>
+      </div>
+      <h1 id="game-title" tabindex="-1">Este correo es falso.<br class="mobile-break"> ¿Qué señal lo delata?</h1>
+      <p class="game-intro">Revisa el mensaje y selecciona una sola respuesta.</p>
+
+      <article class="email" aria-label="Correo de prueba del nivel 1">
+        <dl class="email-header">
+          <dt>De:</dt><dd>Seguridad de la Universidad Horizonte <span class="email-address">&lt;seguridad@uhorizonte-premios.example&gt;</span></dd>
+          <dt>Para:</dt><dd>estudiante@uhorizonte.example</dd>
+        </dl>
+        <div class="email-subject"><span class="field-label">Asunto:</span><h2>Confirme su cuenta para no perder su beca</h2></div>
+        <div class="email-body"><p>Estimado estudiant, su beca fue selecsionada para una verificacion. Ingrese antes de hoy a las 5:00 para no perder el veneficio: <span class="email-action">Revisar beca</span></p></div>
+      </article>
+
+      <form id="answer-form" class="answer-form">
+        <fieldset>
+          <legend>¿Qué señal encontraste?</legend>
+          <div class="answer-options">
+            <label class="answer-option"><input type="radio" name="signal" value="spelling"><span>Errores ortográficos y datos sospechosos.</span></label>
+            <label class="answer-option"><input type="radio" name="signal" value="password"><span>Solicitud de responder con el usuario y la contraseña.</span></label>
+            <label class="answer-option"><input type="radio" name="signal" value="link"><span>Un destino de enlace distinto del dominio que aparenta.</span></label>
+          </div>
+        </fieldset>
+        <div class="form-actions"><button id="submit-answer" class="button primary" type="submit" disabled>Enviar respuesta</button><span class="selection-hint">Selecciona una opción para responder.</span></div>
+      </form>
+
+      <section id="result" class="result" aria-labelledby="result-title" hidden>
+        <p id="result-label" class="eyebrow"></p>
+        <h2 id="result-title" tabindex="-1"></h2>
+        <p id="result-message"></p>
+        <p class="explanation">La señal principal son los <strong>errores ortográficos y los datos sospechosos</strong>: «estudiant», «selecsionada» y «veneficio» son errores del mensaje. El remitente utiliza <strong>uhorizonte-premios.example</strong>, distinto del dominio universitario <strong>uhorizonte.example</strong>.</p>
+        <p class="response-time">Tiempo de respuesta: <strong id="response-time"></strong></p>
+        <div class="review"><h3>Repaso del correo visto</h3><p>«Confirme su cuenta para no perder su beca»</p><p>Correo falso · Errores ortográficos y datos sospechosos.</p></div>
+        <div class="result-actions"><button id="retry-button" class="button primary" type="button">Intentar de nuevo</button><button id="exit-button" class="button secondary" type="button">Salir</button></div>
+      </section>
+    </section>
+    <footer class="page-footer">Phishing Arena <span aria-hidden="true">·</span> Entorno de práctica con correos ficticios</footer>
+  </main>
+</body>
+</html>
