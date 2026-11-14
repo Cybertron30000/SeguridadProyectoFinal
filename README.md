@@ -48,6 +48,8 @@ Repositorio: [Cybertron30000/SeguridadProyectoFinal](https://github.com/Cybertro
 
 El contenido de esta carpeta corresponde a la raíz del repositorio remoto. Los correos se suben junto con el juego. El flujo de GitHub Actions comprueba la ronda y publica únicamente sus seis archivos de ejecución.
 
-Para habilitar la publicación inicial, abre **Settings → Pages → Build and deployment → Source → GitHub Actions**. Después ejecuta el flujo **Revisar y publicar Phishing Arena** desde Actions o sube un cambio a `main`. Las siguientes subidas actualizarán el sitio automáticamente. El enlace definitivo lo proporciona el despliegue de GitHub Pages; no se debe considerar publicado hasta que termine correctamente.
+**Jugar en línea:** [Phishing Arena en GitHub Pages](https://cybertron30000.github.io/SeguridadProyectoFinal/).
+
+GitHub Actions comprueba el juego y publica cada cambio subido a `main`. El flujo **Revisar y publicar Phishing Arena** también se puede iniciar manualmente desde Actions.
 
 Referencia: [publicar GitHub Pages con un flujo de Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

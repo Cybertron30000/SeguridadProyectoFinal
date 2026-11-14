@@ -135,8 +135,8 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - [x] Recibir la autorización e implementar la nueva versión.
 - [x] Identificar el repositorio remoto: `Cybertron30000/SeguridadProyectoFinal`.
 - [x] Preparar el flujo de comprobación y despliegue en `.github/workflows/pages.yml`.
-- [ ] Confirmar la habilitación de GitHub Pages y completar el despliegue.
-- [ ] Revisar la ronda terminada y su publicación.
+- [x] Confirmar que GitHub Pages está habilitado y que el despliegue terminó correctamente.
+- [ ] Revisar visualmente la ronda publicada en escritorio y móvil.
 
 ## Registro de implementación — 13 de noviembre de 2026
 
@@ -148,6 +148,7 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Retirada la prueba de la muestra anterior, que exigía niveles y temporizador, y sustituida por `tests/round.test.cjs`.
 - Subida confirmada a `main` del repositorio de GitHub. Las comprobaciones de sintaxis y los siete casos también pasaron en GitHub Actions.
 - El navegador conectado no está disponible en esta sesión. La revisión visual y los gestos en navegador real de escritorio/móvil quedan pendientes; las pruebas con DOM mínimo no sustituyen esa revisión.
-- Preparado un flujo de GitHub Actions que comprueba la ronda y publica los archivos del juego en GitHub Pages. La publicación requiere que Pages esté habilitado para este repositorio.
+- Preparado un flujo de GitHub Actions que comprueba la ronda y publica los archivos del juego en GitHub Pages con cada subida a `main`.
+- Despliegue confirmado correctamente por GitHub Actions. Sitio publicado: https://cybertron30000.github.io/SeguridadProyectoFinal/ .
 
-**Estado actual:** nueva versión implementada y comprobada en lógica e integración. Revisión visual y confirmación de publicación pendientes.
+**Estado actual:** nueva versión implementada, comprobada en lógica e integración, y publicada en GitHub Pages. La revisión visual en un navegador real queda pendiente.
