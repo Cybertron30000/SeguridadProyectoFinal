@@ -146,6 +146,7 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Implementados el reinicio, la navegación por teclado, los avisos accesibles y la adaptación mediante CSS a pantallas pequeñas.
 - Comprobadas la sintaxis de los tres archivos JavaScript y siete casos de contenido, lógica e integración con un DOM mínimo, incluidos los ocho errores, reinicio y arrastre fuera/dentro del papel. Los siete casos pasaron.
 - Retirada la prueba de la muestra anterior, que exigía niveles y temporizador, y sustituida por `tests/round.test.cjs`.
+- Subida confirmada a `main` del repositorio de GitHub. Las comprobaciones de sintaxis y los siete casos también pasaron en GitHub Actions.
 - El navegador conectado no está disponible en esta sesión. La revisión visual y los gestos en navegador real de escritorio/móvil quedan pendientes; las pruebas con DOM mínimo no sustituyen esa revisión.
 - Preparado un flujo de GitHub Actions que comprueba la ronda y publica los archivos del juego en GitHub Pages. La publicación requiere que Pages esté habilitado para este repositorio.
 

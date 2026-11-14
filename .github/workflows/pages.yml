@@ -23,7 +23,6 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html styles.css app.js emails.js round.js favicon.svg _site/
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
@@ -37,6 +36,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
       - name: Publicar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
