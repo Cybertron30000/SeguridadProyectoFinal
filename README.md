@@ -15,7 +15,7 @@ Abre `index.html` en un navegador. No necesita instalación, servidor ni conexi�
 5. Después del octavo, pulsa **Ver mis respuestas**: verás tu decisión, la clasificación correcta, las señales y un consejo de cada correo.
 6. Usa **Volver a jugar** para comenzar una ronda nueva.
 
-Los enlaces y archivos representados en los correos son de muestra: no abren sitios ni descargan archivos. La selección de correos tiene orden fijo. Los aciertos se resumen al final, sin puntos durante la partida.
+Los enlaces y archivos representados en los correos son de muestra: no abren sitios ni descargan archivos. En esta versión la selección de correos tiene orden fijo. Cuando se prepare una reserva mayor de correos, se actualizará para elegir al azar una ronda equilibrada de 8, con 4 legítimos y 4 maliciosos, sin repeticiones dentro de una partida. Los aciertos se resumen al final, sin puntos durante la partida.
 
 ## Archivos
 
@@ -55,5 +55,9 @@ GitHub Actions comprueba el juego y publica cada cambio subido a `main`. El fluj
 ## Fuentes y créditos
 
 Los ocho correos de práctica son ficticios y originales; esta versión no usa datasets externos. La mecánica de los sellos se inspiró en el HTML de ejemplo `sello.txt` y la captura facilitados por el usuario. El nombre de su autor o propietario queda pendiente de confirmar para incluir el crédito antes de presentar la versión final. Si se incorporan datasets o materiales externos, se documentarán su procedencia, autoría/propiedad y licencia en `FUENTES.md` y en la sección de créditos del juego.
+
+## Próxima mejora acordada
+
+El usuario considera adecuada la dificultad actual: hay correos claros y otros que requieren pensar, sin que sean imposibles. Después de que dé la orden de preparar más correos, se creará una reserva y cada partida elegirá 8 al azar, con 4 legítimos y 4 maliciosos. Esta selección aleatoria todavía no está implementada.
 
 Referencia: [publicar GitHub Pages con un flujo de Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

@@ -36,7 +36,9 @@ Los ocho correos actuales son ficticios y se redactaron para esta práctica; por
 
 **Trabajo previsto**
 
-- Diseñar una ronda equilibrada de 8 correos legítimos y maliciosos. La selección y redacción quedan a discreción del asistente cuando se trabaje esta etapa.
+- Cuando el usuario dé la orden, crear una reserva de correos mayor que los 8 que aparecen en una partida.
+- Mantener la dificultad que el usuario encontró adecuada: una mezcla de mensajes fáciles de reconocer y otros que requieran comparar señales con atención, todos clasificables con fundamento y sin trampas imposibles.
+- Asegurar que la reserva permita seleccionar 4 correos legítimos y 4 maliciosos por ronda.
 - Asegurar que cada mensaje tenga una clasificación defendible y señales comprensibles.
 - Escribir para cada correo una explicación breve: qué lo hace legítimo o malicioso y qué señales lo justifican.
 - Preparar para cada mensaje un texto de acierto y otro de error, con tono celebratorio al acertar y tono claro y amable al corregir.
@@ -48,10 +50,16 @@ Los ocho correos actuales son ficticios y se redactaron para esta práctica; por
 
 - Las respuestas no dependen de adivinar ni contienen señales contradictorias.
 - Los correos legítimos también parecen naturales y variados.
+- La dificultad general conserva el equilibrio aprobado por el usuario: algunos mensajes son claros y otros requieren pensar, sin que resulte imposible decidir.
+- Hay suficientes mensajes de ambas categorías para formar rondas equilibradas distintas.
 - La explicación enseña algo concreto sin revelar la respuesta antes de que el jugador decida.
 - Las fuentes externas utilizadas tienen procedencia, autoría/propietario y condiciones de uso documentadas.
 
 **Resultado esperado:** contenido de la ronda y retroalimentación listos para incorporarse.
+
+## Selección futura de cada ronda
+
+Después de crear la reserva, el juego elegirá al azar 8 correos para cada partida: 4 legítimos y 4 maliciosos. La muestra se tomará sin repetir mensajes dentro de la misma ronda y su orden también se mezclará. El repaso final usará exactamente los 8 correos que aparecieron y sus explicaciones asociadas. Se implementará tras la orden del usuario de crear la reserva.
 
 ## Etapa 3 — Definir la interacción visual
 
@@ -76,16 +84,17 @@ Los ocho correos actuales son ficticios y se redactaron para esta práctica; por
 **Trabajo previsto, cuando el usuario autorice programar**
 
 - Reemplazar la experiencia anterior por el flujo acordado, conservando el proyecto como una página web sencilla.
-- Presentar los correos uno por uno en el orden de la ronda.
+- Presentar los 8 correos sorteados al azar de la reserva para esta ronda.
 - Registrar la clasificación elegida y evitar que un mismo mensaje se responda más de una vez.
 - Avanzar al siguiente correo después de cada decisión, sin interrumpir la ronda por una respuesta incorrecta.
-- No añadir temporizador ni cuentas. Mantener los 8 correos en orden fijo. Cualquier puntuación o mecánica adicional debe acordarse antes de implementarse.
+- No añadir temporizador ni cuentas. Mantener 8 correos por ronda, con 4 de cada categoría y sin repeticiones en la misma ronda. Cualquier puntuación o mecánica adicional debe acordarse antes de implementarse.
 
 **Revisión para cerrar la etapa**
 
 - Se puede clasificar y revisar toda la ronda de principio a fin.
 - Una respuesta incorrecta no impide completar los correos restantes.
-- Se presentan exactamente 8 mensajes en el orden aprobado.
+- Se presentan exactamente 8 mensajes sin repeticiones, con 4 legítimos y 4 maliciosos.
+- La selección y el orden se sortean al iniciar la partida; el repaso corresponde a esa selección.
 - No hay cuenta regresiva, temporizador ni derrota por tardar en responder.
 
 **Resultado esperado:** ronda jugable de principio a fin.
@@ -145,6 +154,9 @@ Los ocho correos actuales son ficticios y se redactaron para esta práctica; por
 - [x] Preparar el flujo de comprobación y despliegue en `.github/workflows/pages.yml`.
 - [x] Confirmar que GitHub Pages está habilitado y que el despliegue terminó correctamente.
 - [x] Añadir al plan el registro de datasets, autores/propietarios, procedencia y licencias.
+- [x] Registrar la valoración del usuario sobre la dificultad actual y la selección aleatoria futura de una ronda equilibrada.
+- [ ] Crear la reserva de correos después de recibir la orden del usuario.
+- [ ] Implementar la selección aleatoria de 4 correos legítimos y 4 maliciosos después de crear la reserva.
 - [ ] Confirmar el nombre del autor/propietario de la referencia `sello.txt` y la captura antes de preparar los créditos públicos.
 - [ ] Crear `FUENTES.md` e implementar la sección de créditos cuando se incorporen materiales externos.
 - [ ] Revisar visualmente la ronda publicada en escritorio y móvil.
@@ -162,5 +174,7 @@ Los ocho correos actuales son ficticios y se redactaron para esta práctica; por
 - El navegador conectado no está disponible en esta sesión. La revisión visual y los gestos en navegador real de escritorio/móvil quedan pendientes; las pruebas con DOM mínimo no sustituyen esa revisión.
 - Preparado un flujo de GitHub Actions que comprueba la ronda y publica los archivos del juego en GitHub Pages con cada subida a `main`.
 - Despliegue confirmado correctamente por GitHub Actions. Sitio publicado: https://cybertron30000.github.io/SeguridadProyectoFinal/ .
+- El usuario considera adecuada la dificultad de la ronda actual: incluye correos fáciles y otros que generan duda razonable. Pidió conservar este equilibrio.
+- La implementación actual usa siempre los mismos 8 correos y un orden fijo. La futura reserva y el sorteo equilibrado de 8 mensajes quedan pendientes hasta que el usuario dé la orden de crearla.
 
 **Estado actual:** nueva versión implementada, comprobada en lógica e integración, y publicada en GitHub Pages. La revisión visual en un navegador real queda pendiente.
