@@ -1,38 +1,53 @@
-# Phishing Arena — Muestra inicial
+# Phishing Arena — La mesa de revisión
 
-Primera muestra local del beta: pantalla de inicio y nivel 1. Permite revisar el diseño, responder al primer correo y consultar una explicación. Los cinco niveles completos y la publicación en GitHub Pages siguen pendientes.
+Un juego de práctica inspirado en la revisión de documentos con sellos: lee 8 correos ficticios de la Universidad Horizonte, clasifícalos como legítimos o maliciosos y descubre las explicaciones al terminar. Sin niveles ni límite de tiempo.
 
-## Abrir la muestra
+## Abrir el juego
 
-Abre `index.html` en tu navegador. No necesita instalación ni conexión a Internet.
+Abre `index.html` en un navegador. No necesita instalación, servidor ni conexión a Internet. Todos los archivos, incluidos los correos, están en este proyecto.
 
-También puedes servir esta carpeta con un servidor estático. En PyCharm, abre `index.html` usando la opción de abrir en el navegador.
+## Cómo jugar
 
-## Qué probar
+1. Pulsa **Abrir mi bandeja**.
+2. Lee el correo y compara las direcciones con el dominio de referencia `uhorizonte.example`.
+3. Pulsa un sello o arrástralo sobre el papel: **Correo legítimo** o **Correo malicioso**. También puedes usar Tab y Enter/Espacio.
+4. La decisión queda guardada; pulsa **Siguiente correo** para continuar. Un error no termina la ronda.
+5. Después del octavo, pulsa **Ver mis respuestas**: verás tu decisión, la clasificación correcta, las señales y un consejo de cada correo.
+6. Usa **Volver a jugar** para comenzar una ronda nueva.
 
-1. Pulsa «Inicio» y comprueba la secuencia 1, 2, 3.
-2. Revisa el correo de la parte superior y elige una respuesta en la parte inferior.
-3. La respuesta correcta es «Errores ortográficos y datos sospechosos».
-4. Comprueba la explicación, el tiempo de respuesta y el repaso del correo.
-5. Usa «Intentar de nuevo» para probar una respuesta incorrecta o dejar agotar los 30 segundos.
-6. Usa «Salir» para volver al inicio.
-7. Repite el recorrido en una ventana estrecha y usando el teclado.
+Los enlaces y archivos representados en los correos son de muestra: no abren sitios ni descargan archivos. La selección de correos tiene orden fijo. Los aciertos se resumen al final, sin puntos durante la partida.
 
 ## Archivos
 
-- `index.html`: pantallas, ilustración vectorial y correo provisional.
-- `styles.css`: diseño y adaptación a móvil.
-- `app.js`: cuenta regresiva, temporizador, evaluación y reinicio.
-- `ETAPAS.md`: plan de la versión beta y progreso.
-- `tests/level-one.test.cjs`: comprobaciones de lógica con DOM simulado y reloj controlado.
+- `index.html`, `styles.css`: pantallas y diseño de escritorio con sellos; adaptación a móvil.
+- `emails.js`: los 8 correos, sus clasificaciones y las explicaciones. Puedes editar aquí el contenido.
+- `round.js`: estado de la ronda; impide duplicados y entrega el repaso solo al completar los ocho mensajes.
+- `app.js`: presentación, controles, arrastre, accesibilidad y resultados.
+- `favicon.svg`: icono local del juego.
+- `ETAPAS.md`: planificación original, conservada como referencia histórica.
+- `ETAPAS_PROPUESTA_NUEVA.md`: planificación vigente y registro del desarrollo.
+- `tests/round.test.cjs`: comprobaciones de la ronda y su integración con un DOM mínimo.
+- `.github/workflows/pages.yml`: comprobaciones y publicación automática tras cada subida a `main`.
 
 ## Comprobaciones
 
-Con Node.js disponible, ejecuta desde esta carpeta:
+Con Node.js, desde esta carpeta:
 
 ```bash
 node --check app.js
-node --test tests/level-one.test.cjs
+node --check emails.js
+node --check round.js
+node tests/round.test.cjs
 ```
 
-Estas comprobaciones cubren la lógica de la muestra. La revisión visual y de interacción en navegador debe realizarse por separado.
+Las comprobaciones de integración usan un DOM mínimo. La revisión visual y los gestos reales en escritorio y móvil deben comprobarse también en un navegador.
+
+## GitHub y publicación
+
+Repositorio: [Cybertron30000/SeguridadProyectoFinal](https://github.com/Cybertron30000/SeguridadProyectoFinal).
+
+El contenido de esta carpeta corresponde a la raíz del repositorio remoto. Los correos se suben junto con el juego. El flujo de GitHub Actions comprueba la ronda y publica únicamente sus seis archivos de ejecución.
+
+Para habilitar la publicación inicial, abre **Settings → Pages → Build and deployment → Source → GitHub Actions**. Después ejecuta el flujo **Revisar y publicar Phishing Arena** desde Actions o sube un cambio a `main`. Las siguientes subidas actualizarán el sitio automáticamente. El enlace definitivo lo proporciona el despliegue de GitHub Pages; no se debe considerar publicado hasta que termine correctamente.
+
+Referencia: [publicar GitHub Pages con un flujo de Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

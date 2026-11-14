@@ -3,99 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Practica cómo reconocer un correo de phishing en un entorno universitario.">
-  <title>Phishing Arena — Muestra inicial</title>
+  <meta name="theme-color" content="#243b33">
+  <meta name="description" content="Ocho correos, dos sellos y tu criterio. Practica cómo reconocer el phishing a tu ritmo.">
+  <title>Phishing Arena — La mesa de revisión</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./emails.js" defer></script>
+  <script src="./round.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="Phishing Arena, página de inicio">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="9" width="26" height="19" rx="4"/><path d="m4 11 12 9 12-9M21 3v6"/></svg>
-      <span>Phishing Arena</span>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="Phishing Arena, volver al inicio">
+      <span class="brand-mark" aria-hidden="true">✉</span>
+      <span>Phishing Arena<small>LABORATORIO DE SEGURIDAD</small></span>
     </a>
-    <span class="prototype-label">BETA · MUESTRA INICIAL</span>
+    <span class="header-note"><span aria-hidden="true">●</span> Simulación educativa</span>
   </header>
 
-  <main class="page">
-    <section id="home" class="panel home-panel" aria-labelledby="home-title">
-      <p class="eyebrow">APRENDE A RECONOCER EL PHISHING</p>
-      <h1 id="home-title" tabindex="-1">Phishing Arena</h1>
-      <p class="intro">Estás revisando tus correos de la universidad. ¿Puedes reconocer un mensaje falso antes de caer en el anzuelo?</p>
-
-      <svg class="fishing-art" viewBox="0 0 520 290" role="img" aria-labelledby="art-title art-description">
-        <title id="art-title">Una caña de pescar con un correo colgando del anzuelo</title>
-        <desc id="art-description">El correo representa el engaño que debes aprender a reconocer.</desc>
-        <ellipse cx="267" cy="262" rx="175" ry="12" fill="#edf2f6"/>
-        <circle cx="279" cy="135" r="113" fill="#f3f6f9"/>
-        <path d="M110 251 204 47q7-14 22-11l139 21" fill="none" stroke="#304b66" stroke-width="8" stroke-linecap="round"/>
-        <path d="m111 251 20-44" stroke="#66829b" stroke-width="17" stroke-linecap="round"/>
-        <circle cx="150" cy="193" r="15" fill="#fff" stroke="#304b66" stroke-width="5"/>
-        <circle cx="150" cy="193" r="5" fill="#66829b"/>
-        <path d="M366 58v69" fill="none" stroke="#ca9450" stroke-width="2.5"/>
-        <path d="M366 126v19c0 18-25 18-25 0v-7l7 9" fill="none" stroke="#304b66" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <g transform="rotate(8 350 190)">
-          <rect x="286" y="155" width="129" height="85" rx="11" fill="#fff" stroke="#9eb0c1" stroke-width="2"/>
-          <path d="m289 161 61 43 62-43M290 234l40-34m81 34-40-34" fill="none" stroke="#9eb0c1" stroke-width="2" stroke-linejoin="round"/>
-          <circle cx="407" cy="158" r="16" fill="#f5e3c7" stroke="#fff" stroke-width="4"/>
-          <path d="M407 150v9m0 5v1" stroke="#8b602b" stroke-width="3" stroke-linecap="round"/>
-        </g>
-        <path d="m253 72 4 7m-12 4 8 2M435 213l7 3m-11 6 3 6" stroke="#b8c6d2" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
-
-      <p class="home-instructions">Lee el correo y elige la señal que lo delata.<br>Tienes <strong>30 segundos</strong> para responder.</p>
-      <button id="start-button" class="button primary start-button" type="button">Inicio <span aria-hidden="true">→</span></button>
-      <p class="sample-note">Esta muestra permite probar el primer nivel.</p>
-    </section>
-
-    <section id="countdown" class="panel countdown-panel" aria-labelledby="countdown-title" hidden>
-      <p class="eyebrow">PREPARA TU OJO CRÍTICO</p>
-      <h1 id="countdown-title" tabindex="-1">Revisa tu correo</h1>
-      <p>El tiempo comienza al aparecer el mensaje.</p>
-      <div id="countdown-number" class="countdown-number" aria-live="assertive" aria-atomic="true">1</div>
-    </section>
-
-    <section id="game" class="panel game-panel" aria-labelledby="game-title" hidden>
-      <div class="game-toolbar">
-        <span class="badge level-badge">NIVEL 1</span>
-        <span class="sample-badge">Muestra inicial</span>
-        <span id="timer" class="badge timer" role="timer" aria-label="Tiempo restante: 30 segundos">00:30</span>
+  <main id="main" class="workspace" tabindex="-1">
+    <section id="home" class="home" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="eyebrow">TU TURNO EN LA BANDEJA DE ENTRADA</p>
+        <h1 id="home-title" tabindex="-1">No todo correo<br>merece <em>pasar.</em></h1>
+        <p class="home-description">Algunos informan. Otros intentan engañarte.<br>Lee, revisa y decide cuáles dejarías pasar.</p>
+        <div class="home-facts"><span><b>08</b> correos</span><span><b>02</b> sellos</span><span><b>∞</b> a tu ritmo</span></div>
+        <button id="start-button" class="button primary" type="button">Abrir mi bandeja <span aria-hidden="true">↗</span></button>
+        <p class="home-note">Al terminar, repasamos juntos cada decisión.</p>
       </div>
-      <h1 id="game-title" tabindex="-1">Este correo es falso.<br class="mobile-break"> ¿Qué señal lo delata?</h1>
-      <p class="game-intro">Revisa el mensaje y selecciona una sola respuesta.</p>
-
-      <article class="email" aria-label="Correo de prueba del nivel 1">
-        <dl class="email-header">
-          <dt>De:</dt><dd>Seguridad de la Universidad Horizonte <span class="email-address">&lt;seguridad@uhorizonte-premios.example&gt;</span></dd>
-          <dt>Para:</dt><dd>estudiante@uhorizonte.example</dd>
-        </dl>
-        <div class="email-subject"><span class="field-label">Asunto:</span><h2>Confirme su cuenta para no perder su beca</h2></div>
-        <div class="email-body"><p>Estimado estudiant, su beca fue selecsionada para una verificacion. Ingrese antes de hoy a las 5:00 para no perder el veneficio: <span class="email-action">Revisar beca</span></p></div>
-      </article>
-
-      <form id="answer-form" class="answer-form">
-        <fieldset>
-          <legend>¿Qué señal encontraste?</legend>
-          <div class="answer-options">
-            <label class="answer-option"><input type="radio" name="signal" value="spelling"><span>Errores ortográficos y datos sospechosos.</span></label>
-            <label class="answer-option"><input type="radio" name="signal" value="password"><span>Solicitud de responder con el usuario y la contraseña.</span></label>
-            <label class="answer-option"><input type="radio" name="signal" value="link"><span>Un destino de enlace distinto del dominio que aparenta.</span></label>
-          </div>
-        </fieldset>
-        <div class="form-actions"><button id="submit-answer" class="button primary" type="submit" disabled>Enviar respuesta</button><span class="selection-hint">Selecciona una opción para responder.</span></div>
-      </form>
-
-      <section id="result" class="result" aria-labelledby="result-title" hidden>
-        <p id="result-label" class="eyebrow"></p>
-        <h2 id="result-title" tabindex="-1"></h2>
-        <p id="result-message"></p>
-        <p class="explanation">La señal principal son los <strong>errores ortográficos y los datos sospechosos</strong>: «estudiant», «selecsionada» y «veneficio» son errores del mensaje. El remitente utiliza <strong>uhorizonte-premios.example</strong>, distinto del dominio universitario <strong>uhorizonte.example</strong>.</p>
-        <p class="response-time">Tiempo de respuesta: <strong id="response-time"></strong></p>
-        <div class="review"><h3>Repaso del correo visto</h3><p>«Confirme su cuenta para no perder su beca»</p><p>Correo falso · Errores ortográficos y datos sospechosos.</p></div>
-        <div class="result-actions"><button id="retry-button" class="button primary" type="button">Intentar de nuevo</button><button id="exit-button" class="button secondary" type="button">Salir</button></div>
-      </section>
+      <div class="home-preview" aria-hidden="true">
+        <div class="preview-back"></div>
+        <div class="preview-paper">
+          <span class="paper-label">UNIVERSIDAD HORIZONTE</span>
+          <div class="preview-envelope">✉</div>
+          <p>Para: tu buen criterio.</p>
+          <span class="preview-line"></span><span class="preview-line short"></span><span class="preview-line"></span>
+          <span class="preview-seal">REVISADO<br><small>CON ATENCIÓN</small></span>
+          <span class="paper-bottom">BANDEJA N.º 008 <span>↓</span></span>
+        </div>
+        <span class="desk-note">Lee entre líneas.</span>
+      </div>
+      <div class="home-steps"><span><b>01</b> Lee el correo</span><span><b>02</b> Aplica tu sello</span><span><b>03</b> Revisa tus respuestas</span></div>
     </section>
-    <footer class="page-footer">Phishing Arena <span aria-hidden="true">·</span> Entorno de práctica con correos ficticios</footer>
+
+    <section id="game" aria-labelledby="game-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">LA MESA DE REVISIÓN</p><h1 id="game-title" tabindex="-1">¿Lo dejas pasar?</h1><p>Revisa el mensaje y decide qué sello merece.</p></div><div class="round-counter"><span id="mail-number">01</span><span> / 08<small>CORREOS</small></span></div></div>
+      <div class="progress-row"><span id="progress-label">0 de 8 revisados</span><progress id="progress" max="8" value="0" aria-label="Correos revisados"></progress><span class="pace-label">Sin prisa. Observa bien.</span></div>
+      <details class="institution-reference"><summary>Tu referencia: Universidad Horizonte <span>uhorizonte.example</span></summary><p>En esta simulación perteneces a la Universidad Horizonte. Su dominio institucional es <strong>uhorizonte.example</strong> y utilizas su portal estudiantil y aula virtual. Compara las direcciones completas y considera lo que pide cada mensaje; el nombre visible del remitente no basta.</p></details>
+      <div class="desk-layout">
+        <aside id="stamp-tray" class="stamp-tray" aria-label="Sellos para clasificar el correo">
+          <p class="tray-title">TUS HERRAMIENTAS</p>
+          <div class="stamp-options">
+            <button id="real-button" class="stamp-button real" type="button" data-choice="real"><span class="stamp-tool" aria-hidden="true"><span class="stamp-handle"></span><span class="stamp-base">✓</span></span><strong>Correo legítimo</strong><small>Dejar pasar</small></button>
+            <button id="malicious-button" class="stamp-button malicious" type="button" data-choice="malicious"><span class="stamp-tool" aria-hidden="true"><span class="stamp-handle"></span><span class="stamp-base">⚑</span></span><strong>Correo malicioso</strong><small>Detener aquí</small></button>
+          </div>
+          <p class="tray-hint">Pulsa un sello o arrástralo sobre el correo.</p>
+        </aside>
+        <div class="paper-column">
+          <article id="mail-card" class="mail-card" aria-labelledby="mail-subject">
+            <div class="mail-head"><span id="avatar" class="avatar" aria-hidden="true"></span><div class="sender"><strong id="sender"></strong><span id="address"></span></div><span id="mail-date" class="mail-date"></span></div>
+            <div class="mail-content"><p class="to-line">Para: estudiante@uhorizonte.example</p><h2 id="mail-subject" tabindex="-1"></h2><div id="mail-body" class="mail-body"></div><div id="mail-extras"></div></div>
+            <div class="paper-footer"><span>MENSAJE DE PRÁCTICA</span><span id="paper-number">01 / 08</span></div>
+            <div id="stamp-imprint" class="stamp-imprint" hidden aria-hidden="true"></div>
+          </article>
+          <div id="decision-receipt" class="decision-receipt" hidden><div><p class="eyebrow">DECISIÓN GUARDADA</p><p id="decision-label"></p><small>La explicación te espera al terminar la ronda.</small></div><button id="next-button" class="button primary" type="button">Siguiente correo <span aria-hidden="true">→</span></button></div>
+        </div>
+        <aside class="inbox-tray" aria-label="Estado de la bandeja"><div class="inbox-icon" aria-hidden="true">▤</div><strong id="pending-count">8</strong><span>POR REVISAR</span><div id="file-stack" class="file-stack" aria-hidden="true"></div><p>Cada decisión<br>cuenta.</p></aside>
+      </div>
+    </section>
+
+    <section id="results" aria-labelledby="results-title" hidden>
+      <div class="results-banner"><p class="eyebrow">BANDEJA REVISADA · 8 DE 8</p><h1 id="results-title" tabindex="-1">Cada correo deja<br>una lección.</h1><p id="results-message"></p><div class="results-actions"><button id="restart-button" class="button primary" type="button">Volver a jugar <span aria-hidden="true">↻</span></button><button id="home-button" class="button secondary" type="button">Volver al inicio</button></div></div>
+      <div class="review-heading"><h2>Tus decisiones, una por una.</h2><p>La respuesta correcta y las señales que la explican.</p></div>
+      <div id="review-list" class="review-list"></div>
+      <div class="closing-note"><span aria-hidden="true">✦</span><p><strong>Antes de confiar, verifica.</strong> Si un mensaje te genera dudas, consulta el portal habitual o contacta a la institución desde su directorio. Un remitente conocido también puede ser suplantado.</p></div>
+    </section>
+    <noscript><p class="noscript">Activa JavaScript para abrir la bandeja y jugar.</p></noscript>
   </main>
+  <footer class="site-footer"><span>Phishing Arena</span><span>Correos ficticios. Aprendizajes reales.</span><span>UNIVERSIDAD HORIZONTE · SIMULACIÓN</span></footer>
+  <p id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
 </body>
 </html>
