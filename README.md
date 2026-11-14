@@ -52,4 +52,8 @@ El contenido de esta carpeta corresponde a la raíz del repositorio remoto. Los 
 
 GitHub Actions comprueba el juego y publica cada cambio subido a `main`. El flujo **Revisar y publicar Phishing Arena** también se puede iniciar manualmente desde Actions.
 
+## Fuentes y créditos
+
+Los ocho correos de práctica son ficticios y originales; esta versión no usa datasets externos. La mecánica de los sellos se inspiró en el HTML de ejemplo `sello.txt` y la captura facilitados por el usuario. El nombre de su autor o propietario queda pendiente de confirmar para incluir el crédito antes de presentar la versión final. Si se incorporan datasets o materiales externos, se documentarán su procedencia, autoría/propiedad y licencia en `FUENTES.md` y en la sección de créditos del juego.
+
 Referencia: [publicar GitHub Pages con un flujo de Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

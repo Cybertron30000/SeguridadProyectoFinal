@@ -12,6 +12,8 @@ Se toman como referencia del `ETAPAS.md` original las reglas que siguen siendo p
 
 La nueva versión sustituye la experiencia anterior del juego. El documento original `ETAPAS.md` se conserva como referencia histórica.
 
+Los ocho correos actuales son ficticios y se redactaron para esta práctica; por ahora no se han incorporado datasets externos. La interacción con sellos toma como referencia el HTML `sello.txt` y la captura compartidos por el usuario; el nombre del autor o propietario de esa referencia está pendiente de confirmar.
+
 ## Etapa 1 — Acordar el flujo y las reglas
 
 **Trabajo previsto**
@@ -38,12 +40,16 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Asegurar que cada mensaje tenga una clasificación defendible y señales comprensibles.
 - Escribir para cada correo una explicación breve: qué lo hace legítimo o malicioso y qué señales lo justifican.
 - Preparar para cada mensaje un texto de acierto y otro de error, con tono celebratorio al acertar y tono claro y amable al corregir.
+- Antes de reutilizar información de terceros, identificar su dataset o material de origen, autor u organización propietaria, enlace, versión o fecha y licencia o condiciones de uso.
+- No incorporar materiales externos a la versión publicada si no se puede comprobar su procedencia y que sus condiciones permitan ese uso.
+- Registrar las fuentes y los créditos en `FUENTES.md`; incluir autoría, transformaciones y licencia correspondiente cuando aplique.
 
 **Revisión para cerrar la etapa**
 
 - Las respuestas no dependen de adivinar ni contienen señales contradictorias.
 - Los correos legítimos también parecen naturales y variados.
 - La explicación enseña algo concreto sin revelar la respuesta antes de que el jugador decida.
+- Las fuentes externas utilizadas tienen procedencia, autoría/propietario y condiciones de uso documentadas.
 
 **Resultado esperado:** contenido de la ronda y retroalimentación listos para incorporarse.
 
@@ -113,6 +119,7 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Configurar el proyecto para el repositorio de GitHub acordado y publicarlo con GitHub Pages.
 - Después de cada cambio de programación o contenido, guardar la actualización en Git y subirla al repositorio remoto para mantenerlo al día.
 - Comprobar que GitHub Pages despliega la versión actualizada desde el repositorio.
+- Añadir al sitio una sección o página de fuentes y créditos para citar datasets y material de terceros que realmente se utilicen.
 
 **Revisión para cerrar la etapa**
 
@@ -121,6 +128,7 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Los correos y el juego están incluidos en el mismo repositorio, sin depender de archivos locales externos.
 - La página y sus recursos cargan correctamente desde la URL publicada en GitHub Pages.
 - Los cambios subidos al repositorio se reflejan en la publicación.
+- La página de fuentes identifica a los autores o propietarios y las licencias de los materiales reutilizados.
 
 **Resultado esperado:** versión revisada, guardada en GitHub y publicada en GitHub Pages.
 
@@ -136,6 +144,9 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - [x] Identificar el repositorio remoto: `Cybertron30000/SeguridadProyectoFinal`.
 - [x] Preparar el flujo de comprobación y despliegue en `.github/workflows/pages.yml`.
 - [x] Confirmar que GitHub Pages está habilitado y que el despliegue terminó correctamente.
+- [x] Añadir al plan el registro de datasets, autores/propietarios, procedencia y licencias.
+- [ ] Confirmar el nombre del autor/propietario de la referencia `sello.txt` y la captura antes de preparar los créditos públicos.
+- [ ] Crear `FUENTES.md` e implementar la sección de créditos cuando se incorporen materiales externos.
 - [ ] Revisar visualmente la ronda publicada en escritorio y móvil.
 
 ## Registro de implementación — 13 de noviembre de 2026
@@ -143,6 +154,7 @@ La nueva versión sustituye la experiencia anterior del juego. El documento orig
 - Implementados el inicio, los 8 correos en orden fijo, los sellos por pulsación y arrastre y la revisión final completa.
 - Cada decisión queda confirmada antes de avanzar; las correcciones se reservan hasta terminar la ronda. No hay temporizador ni derrota por error.
 - Creados cuatro correos legítimos y cuatro maliciosos en contexto universitario; el archivo de contenido forma parte del proyecto y del repositorio.
+- Los correos son ficticios y originales; no se usaron datasets externos. La mecánica visual toma como referencia `sello.txt` y la captura compartidos por el usuario; falta identificar a su autor para acreditarlo.
 - Implementados el reinicio, la navegación por teclado, los avisos accesibles y la adaptación mediante CSS a pantallas pequeñas.
 - Comprobadas la sintaxis de los tres archivos JavaScript y siete casos de contenido, lógica e integración con un DOM mínimo, incluidos los ocho errores, reinicio y arrastre fuera/dentro del papel. Los siete casos pasaron.
 - Retirada la prueba de la muestra anterior, que exigía niveles y temporizador, y sustituida por `tests/round.test.cjs`.
